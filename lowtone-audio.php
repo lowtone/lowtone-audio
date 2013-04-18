@@ -22,7 +22,7 @@ namespace lowtone\audio {
 
 	// Includes
 	
-	if (!include_once WP_Package_DIR . "/lowtone-content/lowtone-content.php") 
+	if (!include_once WP_PLUGIN_DIR . "/lowtone-content/lowtone-content.php") 
 		return trigger_error("Lowtone Content Package is required", E_USER_ERROR) && false;
 
 	Package::init(array(
