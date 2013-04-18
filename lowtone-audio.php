@@ -1,7 +1,7 @@
 <?php
 /*
- * Package Name: Audio
- * Package URI: http://wordpress.lowtone.nl/audio
+ * Plugin Name: Audio
+ * Plugin URI: http://wordpress.lowtone.nl/audio
  * Description: Embed audio in Posts.
  * Version: 1.0
  * Author: Lowtone <info@lowtone.nl>
