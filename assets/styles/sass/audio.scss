@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+@import "../../../../../libs/lowtone/assets/styles/sass/partials/mixins";
+
+$background_color: #eee;
+
+@mixin background_stripe {
+	-webkit-background-size: 50px 50px;
+	-moz-background-size: 50px 50px;
+	background-size: 50px 50px;
+
+	background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, rgba(255, 255, 255, .2)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.75, rgba(255, 255, 255, .2)), color-stop(.75, transparent), to(transparent));
+	background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+	background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+	background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+	background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+	background-image: linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+}
+
+.audiojs {
+	background: {
+		image: none;
+		color: $background_color;
+	}
+
+	font-family: "Lucida Console", Monaco, monospace;
+
+	border: {
+		width: 2px;
+		color: #fff;
+		style: solid;
+	}
+
+	@include border_radius(.3em);
+
+	-webkit-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3), 0 0 .8em #ccc inset;
+	-moz-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3), 0 0 .8em #ccc inset;
+	-o-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3), 0 0 .8em #ccc inset;
+	box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3), 0 0 .8em #ccc inset;
+
+	.play-pause {
+		border-right: {
+			color: lighten($background_color, 10%);
+		}
+
+		& > p {
+			background-image: url("../images/player-graphics.png");
+
+			&.loading {
+				background: {
+					image: url("../images/loading.gif");
+					position: 50% 6px;
+				}
+			}
+		}
+	}
+
+	.scrubber {
+		background: {
+			color: darken($background_color, 8%);
+		}
+		border-top-color: darken($background_color, 15%);
+		@include background_stripe;
+
+		.loaded {
+			background: {
+				image: none;
+				color: darken($background_color, 20%);
+			}
+		}
+
+		.progress {
+			background: {
+				image: none;
+				color: darken($background_color, 28%);
+			}
+		}
+	}
+
+	.time {
+		border-left: {
+			color: lighten($background_color, 10%);
+		}
+
+		color: #333;
+		text-shadow: 0 1px 0 lighten($background_color, 30%);
+
+		.played {
+			color: #000;
+		}
+	}
+
+	.error-message {
+		color: #333;
+	}
+}
