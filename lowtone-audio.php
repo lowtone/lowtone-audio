@@ -18,7 +18,8 @@
 
 namespace lowtone\audio {
 
-	use lowtone\content\packages\Package;
+	use lowtone\Util,
+		lowtone\content\packages\Package;
 
 	// Includes
 	
@@ -33,8 +34,8 @@ namespace lowtone\audio {
 				// Register embed handler
 
 				wp_embed_register_handler("html5_audio", "#^https?://.+\.(mp3|ogg|wav)$#i", function($matches, $attr, $url, $rawattr) {
-					wp_enqueue_script("lowtone_audio", Packages_url("/assets/scripts/jquery.audio" . (!Util::isScriptDebug() ? "-min" : "") . ".js", __FILE__), array("audio", "modernizr"));
-					wp_enqueue_style("lowtone_audio", Packages_url("/assets/styles/audio.css", __FILE__));
+					wp_enqueue_script("lowtone_audio", plugins_url("/assets/scripts/jquery.audio" . (!Util::isScriptDebug() ? "-min" : "") . ".js", __FILE__), array("audio", "modernizr"));
+					wp_enqueue_style("lowtone_audio", plugins_url("/assets/styles/audio.css", __FILE__));
 
 					return sprintf('<audio preload="auto"><source src="%1$s" /></audio>', sprintf($matches[0]));
 				});
