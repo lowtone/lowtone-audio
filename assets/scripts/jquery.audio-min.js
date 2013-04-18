@@ -1,0 +1,1 @@
+(function(){var d,c,b;d=jQuery;c=audiojs;b=Modernizr;d(function(){return d("audio").each(function(){var a,e,f;if(b.audio){return c.create(this)}else{a=d(this);f=a.find("source").attr("src");e=f.substr(f.lastIndexOf("/")+1);return a.replaceWith('<a href="'+f+'">'+e+"</a>")}})})}).call(this);
