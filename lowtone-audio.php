@@ -27,7 +27,7 @@ namespace lowtone\audio {
 		return trigger_error("Lowtone Content Package is required", E_USER_ERROR) && false;
 
 	Package::init(array(
-			Package::INIT_PACKAGES => array("lowtone", "lowtone\\wp"),
+			Package::INIT_PACKAGES => array("lowtone", "lowtone\\wp", "lowtone\\scripts\\audiojs", "lowtone\\scripts\\modernizr"),
 			Package::INIT_MERGED_PATH => __NAMESPACE__,
 			Package::INIT_SUCCESS => function() {
 
